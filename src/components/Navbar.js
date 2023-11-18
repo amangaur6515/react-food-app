@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 export const Navbar = () => {
   const [isLoggedIn,setIsLoggedIn]=useState(false)
-  
+  const cartItems=useSelector((store) =>store.cart.items);
 
   return (
     <>
@@ -25,7 +26,7 @@ export const Navbar = () => {
         <Link class="nav-link" to="/contact">Contact <span class="sr-only"></span></Link>
       </li>
       <li class="nav-item active">
-        <Link class="nav-link" to="/contact">Cart <span class="sr-only"></span></Link>
+        <Link class="nav-link" to="/contact">Cart-{cartItems.length}<span class="sr-only"></span></Link>
       </li>
       <li class="nav-item active">
         <Link class="nav-link" to="/instamart">Instamart <span class="sr-only"></span></Link>
