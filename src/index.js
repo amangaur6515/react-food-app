@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 
 import { Body } from './components/Body';
 import RestaurantDetails from './components/RestaurantDetails';
+import Cart from './components/Cart';
 // import Instamart from './components/Instamart'
 const Instamart=lazy(()=>import("./components/Instamart"))
 
@@ -37,6 +38,10 @@ const appRouter=createBrowserRouter([
       {
         path:'/instamart',
         element:<Suspense><Instamart/></Suspense>
+      },
+      {
+        path:'/cart',
+        element:<Cart/>
       }
     ]
   },

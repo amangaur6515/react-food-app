@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 export const Navbar = () => {
   const [isLoggedIn,setIsLoggedIn]=useState(false)
   const cartItems=useSelector((store) =>store.cart.items);
-
+  console.log(cartItems)
   return (
     <>
         <nav class="navbar navbar-expand-lg " style={{backgroundColor:"#fa2302"}}>
@@ -26,7 +26,7 @@ export const Navbar = () => {
         <Link class="nav-link" to="/contact">Contact <span class="sr-only"></span></Link>
       </li>
       <li class="nav-item active">
-        <Link class="nav-link" to="/contact">Cart-{cartItems.length}<span class="sr-only"></span></Link>
+        <Link class="nav-link" to="/cart">Cart{cartItems.length===0?"":cartItems.length}<span class="sr-only"></span></Link>
       </li>
       <li class="nav-item active">
         <Link class="nav-link" to="/instamart">Instamart <span class="sr-only"></span></Link>

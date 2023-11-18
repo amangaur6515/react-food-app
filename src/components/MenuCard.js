@@ -4,8 +4,8 @@ import { useDispatch } from 'react-redux'
 const MenuCard = ({menuObj}) => {
     const imageUrl=`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${menuObj.card.info.imageId}`
     const dispatch=useDispatch()
-    const handleAddItem=()=>{
-      dispatch(addItem("grapes"))
+    const handleAddItem=(item)=>{
+      dispatch(addItem(item))
     }
   return (
     <div className=' row m-4 p-4 shadow ' style={{border:"1px solid black"}}>
@@ -19,13 +19,13 @@ const MenuCard = ({menuObj}) => {
             <p style={{fontWeight:"lighter",fontFamily:"serif"}}>{menuObj.card.info.description}</p>
             
             <h4 style={{color:"green"}}>Price: &#8377;{menuObj.card.info.price/100}</h4>
-            <button className='btn btn-primary' onClick={()=>handleAddItem()}>Add +</button>
+            <button className='btn btn-primary' onClick={()=>handleAddItem(menuObj.card.info.name)}>Add +</button>
         </div>
         
         
     </div>
 
- 
+  
     
   )
 }
