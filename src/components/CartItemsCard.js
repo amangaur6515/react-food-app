@@ -1,12 +1,10 @@
 import React from 'react'
 import { addItem } from '../utils/cartSlice'
 import { useDispatch } from 'react-redux'
-const MenuCard = ({menuObj}) => {
+const CartItemsCard = ({menuObj}) => {
     const imageUrl=`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${menuObj.card.info.imageId}`
     const dispatch=useDispatch()
-    const handleAddItem=(item)=>{
-      dispatch(addItem(item))
-    }
+   
   return (
     <div className=' row m-4 p-4 shadow ' style={{border:"1px solid black"}}>
 
@@ -19,7 +17,7 @@ const MenuCard = ({menuObj}) => {
             <p style={{fontWeight:"lighter",fontFamily:"serif"}}>{menuObj.card.info.description}</p>
             
             <h4 style={{color:"green"}}>Price: &#8377;{menuObj.card.info.price/100}</h4>
-            <button className='btn btn-primary' onClick={()=>handleAddItem(menuObj)}>Add +</button>
+            <button className='btn btn-primary' >Remove -</button>
         </div>
         
         
@@ -30,4 +28,4 @@ const MenuCard = ({menuObj}) => {
   )
 }
 
-export default MenuCard
+export default CartItemsCard
