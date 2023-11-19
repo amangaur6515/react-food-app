@@ -13,7 +13,7 @@ const Cart = () => {
             < CartItemsCard menuObj={items}/>
             
         ))}
-    </div>
+    </div> 
   )
 }
 
